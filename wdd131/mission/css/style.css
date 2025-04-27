@@ -1,7 +1,51 @@
+*{
+    font-size: 20px;
+}
 h2 {
     color: #006EB6;
+    font-size: 15px;
 }
 .container{
-    margin: 25px 25px;
+    width: 60%;
+    
+    margin: auto;
     border: black 1px solid;
+}
+header,main,footer{
+    margin: auto;
+    max-width: 600px;
+}
+header{
+    margin-top: 0%;
+}
+h1, h2{
+    text-align: center;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+h1{
+    font-size: 45px;
+    margin-top: 50px;
+}
+
+.logo{
+    display: block;
+    margin: 50px auto 70px;
+    height: auto;
+    width: 150px;
+
+}
+li{
+    margin: 25px auto;
+}
+
+main p {
+    margin-top: 50px;
+}
+h2{
+    display: block;
+    border-bottom: 1px solid lightgray;
+}
+#em{
+    font-style: italic;
 }
