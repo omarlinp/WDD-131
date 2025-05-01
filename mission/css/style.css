@@ -1,6 +1,16 @@
 *{
     font-size: 20px;
 }
+.dark{
+    background-color: #333;
+    color: white;
+}
+.dark h2{
+    color: #A0D4ED;
+}
+.dark .container{
+    border: white 1px solid;
+}
 h2 {
     color: #006EB6;
     font-size: 15px;
