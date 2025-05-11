@@ -7,6 +7,7 @@
     --text-light: #ebebeb;
     --primary-font: Arial, Helvetica,sans-serif;
     --secondary-font: Mooli, san-serif;
+    --max-width : 1300px;
     }
 body {
     font-family: var(--primary-font);
@@ -37,6 +38,7 @@ ul{
     text-align: center;
     padding: 0;
 }
+
 h2{
     text-align: center;
 }
@@ -51,9 +53,10 @@ a:visited {
     display: grid;
     grid-template-columns: auto;
     width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
 }
 figure{
-    grid-column: 1;
     text-align: center;
 }
 img{
@@ -65,11 +68,29 @@ img{
 footer{
     color: var(--text-light);
     text-align: center;
-    padding: 20 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 @media screen and (min-width: 700px) {
+    .gallery{
+        grid-template-columns: auto auto;
+    }
     
 }
-@media screen and (min-width:100px){
-    
+@media screen and (min-width:1000px){
+    .gallery{
+        grid-template-columns: auto auto auto;
+    }
+    #button{
+        display: none;
+    }
+    nav{
+        margin: auto auto;
+    }
+    ul{
+        display: grid;
+        grid-template-columns: repeat(5,auto);
+        max-width: var(--max-width);
+        margin: auto;
+    }
 }
