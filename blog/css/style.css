@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Mooli&display=swap');
+
+:root{
+    --gold: #EFC69B;
+    --red: #AF1B3F;
+    --dark: #473144;
+    --body-font: Helvetica, Arial, sans-serif;
+    --headline-font: "Lora", Impact, serif;
+}
