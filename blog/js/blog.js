@@ -25,3 +25,55 @@ const articles = [
 		stars: '⭐⭐⭐⭐'
 	}
 ]
+// creating a const to determine the place where the HTML will be inserted
+const main = document.getElementById('maincontent');
+
+//creating the the elements 
+let section = document.createElement('section');
+let div = document.createElement('div');
+let ul = document.createElement('ul');
+
+let li1 = document.createElement('li');
+let li2 = document.createElement('li');
+let li3 = document.createElement('li');
+let li4 = document.createElement('li');
+
+let article = document.createElement('article');
+let h2 = document.createElement('h2');
+let img = document.createElement('img');
+let p = document.createElement('p');
+
+
+div.className ='article-details';
+
+li1.className = 'date';
+
+li1.textContent = articles[0].date;
+li2.textContent = articles[0].ages;
+li3.textContent = articles[0].genre;
+li4.textContent = articles[0].stars;
+
+
+h2.textContent = articles[0].title;
+
+img.src =articles[0].imgSrc;
+img.alt =articles[0].imgAlt;
+
+p.textContent= articles[0].description;
+
+// created the element in the location desired
+main.appendChild(section);
+section.appendChild(div);
+section.appendChild(article);
+
+div.appendChild(ul);
+
+ul.appendChild(li1);
+ul.appendChild(li2);
+ul.appendChild(li3);
+ul.appendChild(li4);
+
+article.appendChild(h2);
+article.appendChild(img);
+article.appendChild(p);
+
