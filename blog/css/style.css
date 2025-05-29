@@ -17,6 +17,7 @@ h1{
 }
 h2{
     color: var(--red);
+    margin-top: 10px;
 }
 nav{
     border-style: solid none;
@@ -37,6 +38,7 @@ main{
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto auto;
+    row-gap: 30px;
     margin-top: 30px;
 }
 section{
@@ -53,6 +55,7 @@ section{
 }
 .article-details > ul{
     list-style: none;
+    margin-top: 15px;
 }
 .article-details > ul >li{
     margin-top: 10px;
@@ -71,4 +74,12 @@ section{
 }
 .skiptocontent a:focus{
     top: 0;
+}
+.date{
+    font-size: 18px;
+}
+img{
+    width: 50%;
+    display: block;
+    margin: auto;
 }
