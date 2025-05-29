@@ -23,10 +23,28 @@ const articles = [
 		ages: '12-16',
 		genre: 'Fantasy',
 		stars: '⭐⭐⭐⭐'
-	}
+	},
+	{
+		id: 3,
+		title: "Belgariad Book One: Pawn of Prophecy",
+		date: "Feb 12, 2022",
+		description:
+		"A fierce dispute among the Gods and the theft of a powerful Orb leaves the World divided into five kingdoms. Young Garion, with his 'Aunt Pol' and an elderly man calling himself Wolf --a father and daughter granted near-immortality by one of the Gods -- set out on a complex mission.",
+		imgSrc:
+		"https://images-na.ssl-images-amazon.com/images/I/41ZxXA+nInL.jpg",
+		imgAlt: "Book cover for Pawn of Prophecy",
+		ages: "12-16",
+		genre: "Fantasy",
+		stars: "⭐⭐⭐⭐⭐"
+}
 ]
 // creating a const to determine the place where the HTML will be inserted
 const main = document.getElementById('maincontent');
+
+for (i = 0; i< articles.length; i++){
+
+
+
 
 //creating the the elements 
 let section = document.createElement('section');
@@ -48,18 +66,18 @@ div.className ='article-details';
 
 li1.className = 'date';
 
-li1.textContent = articles[0].date;
-li2.textContent = articles[0].ages;
-li3.textContent = articles[0].genre;
-li4.textContent = articles[0].stars;
+li1.textContent = articles[i].date;
+li2.textContent = articles[i].ages;
+li3.textContent = articles[i].genre;
+li4.textContent = articles[i].stars;
 
 
-h2.textContent = articles[0].title;
+h2.textContent = articles[i].title;
 
-img.src =articles[0].imgSrc;
-img.alt =articles[0].imgAlt;
+img.src =articles[i].imgSrc;
+img.alt =articles[i].imgAlt;
 
-p.textContent= articles[0].description;
+p.textContent= articles[i].description;
 
 // created the element in the location desired
 main.appendChild(section);
@@ -76,4 +94,4 @@ ul.appendChild(li4);
 article.appendChild(h2);
 article.appendChild(img);
 article.appendChild(p);
-
+};
