@@ -9,7 +9,7 @@ const articles = [
 		imgAlt: 'Book cover for Septimus Heap 1',
 		ages: '10-14',
 		genre: 'Fantasy',
-		stars: '****'
+		stars: '⭐⭐⭐⭐'
 	},
 	{
 		id: 2,
@@ -60,6 +60,7 @@ let article = document.createElement('article');
 let h2 = document.createElement('h2');
 let img = document.createElement('img');
 let p = document.createElement('p');
+let a = document.createElement('a');
 
 
 div.className ='article-details';
@@ -77,7 +78,10 @@ h2.textContent = articles[i].title;
 img.src =articles[i].imgSrc;
 img.alt =articles[i].imgAlt;
 
-p.textContent= articles[i].description;
+p.textContent= articles[i].description + ' ';
+
+a.href = '#';
+a.textContent= 'Read More...';
 
 // created the element in the location desired
 main.appendChild(section);
@@ -94,4 +98,6 @@ ul.appendChild(li4);
 article.appendChild(h2);
 article.appendChild(img);
 article.appendChild(p);
+
+p.appendChild(a);
 };
