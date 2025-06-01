@@ -1,0 +1,12 @@
+:root{
+    --credit_card_color: #dddddd;
+    --magnetic_band_color:#444444;
+    --cc_width: 270px;
+    --cc_height: 170px;
+}
+
+div {
+    height: var(--cc_height);
+    width: var(--cc_width);
+    background-color: var(--credit_card_color);
+}
