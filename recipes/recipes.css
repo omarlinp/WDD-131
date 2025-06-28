@@ -49,13 +49,13 @@ input[type=search]{
     width: 85%;
     border-radius: 5px;
 }
-main{
+figure{
     margin: 5px 10px 20px;
     border: 1px solid black;
     padding: 15px;
     border-radius: 5px;
 }
-main a{
+figcaption a{
     margin-top: 25px;
     padding: 10px;
     border: 1px solid black;
@@ -76,15 +76,15 @@ hr{
     margin: 25px 0;
 }
 @media screen and (min-width: 768px){
-    main{
+    figure{
         display: grid;
         grid-template-columns: 50% 50%;
         padding-bottom: 0;
     }
-    main img{
+    figure img{
         grid-column: 1/2;
     }
-    main div{
+    figure figcaption{
         grid-column: 2/3;
         padding-top: 12px;
         margin-left: 25px;
