@@ -12,13 +12,15 @@ function recipe_list(array){
 
 
 function recipe_template(recipe){
+    
  return `<figure>
             <img src="${recipe.image}" alt="${recipe.name}">
             <figcaption class="content">
-                <a href="">dessert</a>
+                ${tagsTemplate(recipe.tags)}
                 <h2>${recipe.name}</h2>
                 <span
-	                    class="rating"
+	                    id="rating"
+                        class="rating"
 	                    role="img"
 	                    aria-label="Rating: ${recipe.rating} out of 5 stars">
 	                <span aria-hidden="true" class="icon-star">⭐</span>
@@ -31,12 +33,15 @@ function recipe_template(recipe){
             </figcaption>
         </figure>`
 };
-console.log(recipe_template(recipe_list(recipes)))
-function renderRecipes(recipeList) {
-	// get the element we will output the recipes into
-    const main = document.getElementById("main");
-	// use the recipeTemplate function to transform our recipe objects into recipe HTML strings
-
-	// Set the HTML strings as the innerHTML of our output element.
-
+function tagsTemplate(tags) {
+	// loop through the tags list and transform the strings to HTML
+    let html ="";
+    for (let i = 0; i < tags.length; i++) {
+        html += `<a href="">${tags[i]}</a>`;
+        
+    }
+    console.log(html);
+    return html
 }
+console.log(recipe_template(recipe_list(recipes)))
+
