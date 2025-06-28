@@ -86,8 +86,43 @@ function init() {
 
   renderRecipes([recipe]);
 }
+function matchesSearchTerm(recipe, searchTerm) {
+  const term = searchTerm.toLowerCase();
 
+  const inName = recipe.name?.toLowerCase().includes(term);
+  const inDescription = recipe.description?.toLowerCase().includes(term);
+  const inTags = recipe.tags?.some(tag => tag.toLowerCase().includes(term));
+  const inIngredients = recipe.recipeIngredient?.some(ing => ing.toLowerCase().includes(term));
+  
+  return inName || inDescription || inTags || inIngredients;
+}
 
+function fillter(query) {
+    const filtered = recipes.filter(matchesSearchTerm(recipes,query))
+    console.log(filtered)
+	// sort by name
+	/*
+    const sorted = filtered.sort(sortFunction)
+		return sorted
+*/
+}
+function searchHandler(e) {
+	e.preventDefault()
+	// get the search input
+    let value = document.getElementById("searchbox").value;
+    // convert the value in the input to lowercase
+    value = value.toLowerCase();
+    // use the filter function to filter our recipes
+    fillter(value)
+    // render the filtered list
+
+}
+document.addEventListener("DOMContentLoaded",function(){
+    const form = document.getElementById("form");
+    form.addEventListener("submit",function(event){
+        searchHandler(event);
+    });
+})
 init();
 
 
