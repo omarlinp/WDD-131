@@ -43,5 +43,29 @@ function tagsTemplate(tags) {
     console.log(html);
     return html
 }
+function ratingTemplate(rating) {
+	// begin building an html string using the ratings HTML written earlier as a model.
+	let html = `<span
+	class="rating"
+	role="img"
+	aria-label="Rating: ${rating} out of 5 stars"
+>`
+// our ratings are always out of 5, so create a for loop from 1 to 5
+    for (let i = 0; i < rating; i++) {
+        if () {
+            
+        }
+        
+    }
+		// check to see if the current index of the loop is less than our rating
+		// if so then output a filled star
+
+		// else output an empty star
+
+	// after the loop, add the closing tag to our string
+	html += `</span>`
+	// return the html string
+	return html
+}
 console.log(recipe_template(recipe_list(recipes)))
 
