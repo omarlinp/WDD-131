@@ -18,17 +18,7 @@ function recipe_template(recipe){
             <figcaption class="content">
                 ${tagsTemplate(recipe.tags)}
                 <h2>${recipe.name}</h2>
-                <span
-	                    id="rating"
-                        class="rating"
-	                    role="img"
-	                    aria-label="Rating: ${recipe.rating} out of 5 stars">
-	                <span aria-hidden="true" class="icon-star">⭐</span>
-	                <span aria-hidden="true" class="icon-star">⭐</span>
-	                <span aria-hidden="true" class="icon-star">⭐</span>
-	                <span aria-hidden="true" class="icon-star">⭐</span>
-	                <span aria-hidden="true" class="icon-star-empty">☆</span>
-                </span>
+                ${ratingTemplate(recipe.rating)}
                 <p>${recipe.description}</p>
             </figcaption>
         </figure>`
@@ -37,10 +27,10 @@ function tagsTemplate(tags) {
 	// loop through the tags list and transform the strings to HTML
     let html ="";
     for (let i = 0; i < tags.length; i++) {
-        html += `<a href="">${tags[i]}</a>`;
+        html += `<a href="">${tags[i]}</a>
+                `;
         
     }
-    console.log(html);
     return html
 }
 function ratingTemplate(rating) {
@@ -51,9 +41,13 @@ function ratingTemplate(rating) {
 	aria-label="Rating: ${rating} out of 5 stars"
 >`
 // our ratings are always out of 5, so create a for loop from 1 to 5
-    for (let i = 0; i < rating; i++) {
-        if () {
-            
+    for (let i = 0; i < 5; i++) {
+        if (i < rating) {
+            html += `
+            <span aria-hidden="true" class="icon-star">⭐</span>`
+        }else{
+            html += `
+            <span aria-hidden="true" class="icon-star-empty">☆</span>`
         }
         
     }
@@ -63,8 +57,10 @@ function ratingTemplate(rating) {
 		// else output an empty star
 
 	// after the loop, add the closing tag to our string
-	html += `</span>`
+	html += `
+    </span>`
 	// return the html string
+    
 	return html
 }
 console.log(recipe_template(recipe_list(recipes)))
