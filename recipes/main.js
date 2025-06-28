@@ -4,12 +4,11 @@ function random (num){
     return Math.floor(Math.random()*num);
      
 };
-function recipe_list(array){
+function getRandomListEntry(array){
     const length = array.length;
     const index = random(length);
     return array[index];
 };
-
 
 function recipe_template(recipe){
     
@@ -21,8 +20,10 @@ function recipe_template(recipe){
                 ${ratingTemplate(recipe.rating)}
                 <p>${recipe.description}</p>
             </figcaption>
-        </figure>`
+        </figure>
+        `
 };
+
 function tagsTemplate(tags) {
 	// loop through the tags list and transform the strings to HTML
     let html ="";
@@ -63,5 +64,31 @@ function ratingTemplate(rating) {
     
 	return html
 }
-console.log(recipe_template(recipe_list(recipes)))
+
+function renderRecipes(recipeList) {
+	// get the element we will output the recipes into
+    const main = document.getElementById("main");
+	
+    // use the recipeTemplate function to transform our recipe objects into recipe HTML strings
+    for (let i = 0; i < recipeList.length; i++) {
+        const html = recipe_template(recipeList[i])
+        main.innerHTML = html;
+    };
+
+    // Set the HTML strings as the innerHTML of our output element.
+    
+}
+
+function init() {
+  // get a random recipe
+  const recipe = getRandomListEntry(recipes)
+  // render the recipe with renderRecipes.
+
+  renderRecipes([recipe]);
+}
+
+
+init();
+
+
 
