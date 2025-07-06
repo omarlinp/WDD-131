@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div>
+      <h2>Hello, I'm a Full-Stack Developer</h2>
+      <p>Passionate about building clean, scalable web apps in PHP, Python, JS, and more.</p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p>I'm a versatile programmer with expertise in both front-end and back-end development. I specialize in building responsive and user-friendly applications using modern technologies including PHP, Python, HTML, CSS, and JavaScript.</p>
+  </section>
+
+  <section class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-card">
+        <img src="https://placehold.co/64x64/6090c0/FFFFFF?text=HTML" alt="HTML5 Icon" onerror="this.onerror=null;this.src='https://placehold.co/64x64/cccccc/333333?text=HTML';" />
+        <p>HTML5</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://placehold.co/64x64/6090c0/FFFFFF?text=CSS" alt="CSS3 Icon" onerror="this.onerror=null;this.src='https://placehold.co/64x64/cccccc/333333?text=CSS';" />
+        <p>CSS3</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://placehold.co/64x64/6090c0/FFFFFF?text=JS" alt="JavaScript Icon" onerror="this.onerror=null;this.src='https://placehold.co/64x64/cccccc/333333?text=JS';" />
+        <p>JavaScript</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://placehold.co/64x64/6090c0/FFFFFF?text=PHP" alt="PHP Icon" onerror="this.onerror=null;this.src='https://placehold.co/64x64/cccccc/333333?text=PHP';" />
+        <p>PHP</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://placehold.co/64x64/6090c0/FFFFFF?text=Python" alt="Python Icon" onerror="this.onerror=null;this.src='https://placehold.co/64x64/cccccc/333333?text=Python';" />
+        <p>Python</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Sudoku Puzzle Generator</h3>
+      <p>A Python-based Sudoku game with a GUI and puzzle generator.</p>
+    </div>
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>This very site — built with HTML, CSS, and JS using parallax and dark mode.</p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Developer Portfolio. All rights reserved.</p>
+  </footer>
+
+  <!-- Link to external JavaScript file -->
+  <script src="script.js"></script>
+
+</body>
+</html>

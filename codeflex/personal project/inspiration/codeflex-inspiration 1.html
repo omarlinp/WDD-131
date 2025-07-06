@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons (still included if used elsewhere, but no longer for skills) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --blue: #306998;
+      --yellow: #FFD43B;
+      --dark-bg: #1A1A40;
+      --light-text: #E0E0E0;
+      --white: #fff;
+      --gray: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--yellow);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(26, 26, 64, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: var(--light-text);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png'), linear-gradient(rgba(26, 26, 64, 0.85), rgba(26, 26, 64, 0.85));
+      background-size: cover;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem; /* Space between skill cards */
+    }
+
+    .skill-card {
+      background: #222; /* Darker background for cards */
+      padding: 1.5rem;
+      border-radius: 8px; /* Slightly rounded corners */
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Material Design shadow */
+      transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+      flex: 1 1 calc(33% - 3rem); /* For 3 cards per row on larger screens, adjusting for gap */
+      min-width: 150px; /* Minimum width for cards */
+      max-width: 200px; /* Maximum width for cards */
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px); /* Lift effect on hover */
+    }
+
+    .skill-card img { /* Styling for the image icons */
+      width: 64px; /* Adjust size as needed */
+      height: 64px; /* Maintain aspect ratio */
+      margin-bottom: 0.5rem; /* Space between image and text */
+      object-fit: contain; /* Ensures the whole image is visible */
+    }
+
+    .skill-card p {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--light-text);
+    }
+
+
+    .project-card {
+      background: #222;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #333;
+      color: var(--light-text);
+    }
+
+    .contact-form button {
+      background: var(--yellow);
+      color: var(--dark-bg);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: 2px solid var(--yellow);
+      color: var(--yellow);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        margin: 0 0.5rem;
+      }
+
+      .skill-card {
+        flex: 1 1 calc(50% - 3rem); /* 2 cards per row on smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+        .skill-card {
+            flex: 1 1 100%; /* 1 card per row on very small screens */
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div>
+      <h2>Hello, I'm a Full-Stack Developer</h2>
+      <p>Passionate about building clean, scalable web apps in PHP, Python, JS, and more.</p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p>I'm a versatile programmer with expertise in both front-end and back-end development. I specialize in building responsive and user-friendly applications using modern technologies including PHP, Python, HTML, CSS, and JavaScript.</p>
+  </section>
+
+  <section class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-card">
+        <img src="https://placehold.co/64x64/306998/FFFFFF?text=HTML" alt="HTML5 Icon" onerror="this.onerror=null;this.src='https://placehold.co/64x64/cccccc/333333?text=HTML';" />
+        <p>HTML5</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://placehold.co/64x64/306998/FFFFFF?text=CSS" alt="CSS3 Icon" onerror="this.onerror=null;this.src='https://placehold.co/64x64/cccccc/333333?text=CSS';" />
+        <p>CSS3</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://placehold.co/64x64/306998/FFFFFF?text=JS" alt="JavaScript Icon" onerror="this.onerror=null;this.src='https://placehold.co/64x64/cccccc/333333?text=JS';" />
+        <p>JavaScript</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://placehold.co/64x64/306998/FFFFFF?text=PHP" alt="PHP Icon" onerror="this.onerror=null;this.src='https://placehold.co/64x64/cccccc/333333?text=PHP';" />
+        <p>PHP</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://placehold.co/64x64/306998/FFFFFF?text=Python" alt="Python Icon" onerror="this.onerror=null;this.src='https://placehold.co/64x64/cccccc/333333?text=Python';" />
+        <p>Python</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Sudoku Puzzle Generator</h3>
+      <p>A Python-based Sudoku game with a GUI and puzzle generator.</p>
+    </div>
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>This very site — built with HTML, CSS, and JS using parallax and dark mode.</p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Developer Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('light-mode');
+      if (document.body.classList.contains('light-mode')) {
+        document.documentElement.style.setProperty('--dark-bg', '#f4f4f4');
+        document.documentElement.style.setProperty('--light-text', '#222');
+        document.documentElement.style.setProperty('--gray', '#ccc');
+      } else {
+        document.documentElement.style.setProperty('--dark-bg', '#1A1A40');
+        document.documentElement.style.setProperty('--light-text', '#E0E0E0');
+        document.documentElement.style.setProperty('--gray', '#333');
+      }
+    }
+  </script>
+
+</body>
+</html>
