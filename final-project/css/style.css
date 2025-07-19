@@ -30,6 +30,9 @@ h1,h2,h3{
     font-family: 'Poppins', sans-serif;
     color: var(--green-accent); /* Headings are now green */
 }
+h2{
+    margin-bottom: 10px;
+}
 header{
     width: 100%;
     position: fixed;
@@ -110,6 +113,17 @@ nav a {
   margin-bottom: 0.5rem; /* Space between image and text */
   object-fit: contain; /* Ensures the whole image is visible */
 }
+.project-card {
+  background: var(--gray); /* Project card background is now the new darker gray */
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease-in-out;
+}
+.project-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
 .contact-form input, .contact-form textarea {
   width: 100%;
   padding: 1rem;
@@ -128,6 +142,7 @@ nav a {
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 footer {
   text-align: center;
@@ -182,4 +197,7 @@ body.light-mode footer {
 }
 body.light-mode .contact-form button{
     color: var(--dark-bg)
+}
+body.light-mode .contact-form button:hover{
+    background-color: #007400;
 }
