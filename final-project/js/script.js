@@ -21,8 +21,11 @@ function toggledarkmode() {
   }
 }
 
-// Initial call to set correct colors on load
-// This ensures the theme is applied correctly when the page first loads.
-// If you want light mode by default, add 'light-mode' class to the <body> tag in index.html
-// e.g., <body class="light-mode">
-toggledarkmode();
+function sendMail(){
+  let parms ={
+    name : document.getElementById("name").value,
+    email : document.getElementById("email").value,
+    message : document.getElementById("message").value
+  }
+  emailjs.sendForm("service_98c96gb","template_zarwiwe",parms).then(alert("Email Sent"))
+}

@@ -6,16 +6,21 @@
     <meta name="author" content="Omarlin Parra">
     <meta name="description" content="Porfolio Website for all the projects that I have worked on">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="img/favicon/site.webmanifest" />
     <title>CodeFlex</title>
 </head>
 <body>
     <header>
-        <img src="img/codeflex-logo-removebg-preview.png" alt="codeflex-logo" class="logo">
+        <a href="index.html"><img src="img/codeflex-logo-removebg-preview.png" alt="codeflex-logo" class="logo"></a>
         <nav>
                 <a href="">About</a>
                 <a href="">Skills</a>
-                <a href="">Projects</a>
-                <a href="">Contact</a>
+                <a href="projects.html">Projects</a>
+                <a href="#contact">Contact</a>
                 <button class="toogle-btn" onclick="toggledarkmode()">Toogle Dark Mode</button>
             
         </nav>
@@ -23,13 +28,14 @@
     <main>
         <section class="hero">
             <div>
-                <h1>My Porfolio Website</h1>
-                <p>Passinate about coding and developing back-end apps in PHP, Python, and JS</p>
+                <h1>Welcome to CodeFlex</h1>
+                <p>This is a porfolio-styled website for Omarlin Parra</p>
             </div>
         </section>
         <section class="section">
             <h2>About Me</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, assumenda alias unde dolor quos obcaecati minima reiciendis repellendus magni sint cum mollitia, quaerat a officia quis ut voluptas! Aliquid, ullam?</p>
+            <p>My name is Omarlin. I am a developer specialized in back-end development, database, and IT. I have a wide range of technical skills that ranges from building computers, servers and deploying the network to connect them together.I am passionate to develop the back-end systems that make the world move.  
+</p>
         </section>
         <section class="section">
             <h2>Skills</h2>
@@ -61,7 +67,7 @@
             </div>
         </section>
         <section class="section">
-            <h2>Projects</h2>
+            <h2>Latest Projects</h2>
             <article class="project-card">
                 <h3>Recipe Book Website</h3>
                 <p>This is a recipe book website for all the delicious recipes. </p>
@@ -70,24 +76,31 @@
                 <h3>Kids Read For Fun Website</h3>
                 <p>this is the blog for kids read for fun</p>
             </article>
-            <article class="project-card">
-                <h3>BYU-I Mission Statement</h3>
-                <p>A website showing the mission statement for BYU-I</p>
-            </article>
+            <a href="projects.html">Check all the Projects</a>
         </section>
-        <section class="section">
+        <section class="section" id="contact">
         <h2>Contact Me</h2>
         <form class="contact-form">
             <input type="text" name="name" id="name" placeholder="Your Name" required>
             <input type="email" name="email" id="email" placeholder="Your Email" required>
-            <textarea name="" id="" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
+            <textarea name="" id="message" placeholder="Your Message" required></textarea>
+            <button type="submit" onclick="sendMail()">Send</button>
         </form>
         </section>
     </main>
     <footer>
-        <p>© 2025 My Developer Portfolio. All rights reserved.</p>
+        <p>© 2025 CodeFlex. All rights reserved.</p>
     </footer>
     <script src="js/script.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "v9yK8OGBWlEkRj8WF",
+      });
+   })();
+</script>
 </body>
 </html>
