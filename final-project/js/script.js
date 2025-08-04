@@ -20,12 +20,30 @@ function toggledarkmode() {
     document.documentElement.style.setProperty('--input-text', '#FFFFFF'); /* White for input text in dark mode */
   }
 }
+document.getElementById("contact-form").addEventListener("submit",function(event){
+  event.preventDefault();
 
-function sendMail(){
   let parms ={
     name : document.getElementById("name").value,
     email : document.getElementById("email").value,
     message : document.getElementById("message").value
   }
-  emailjs.sendForm("service_98c96gb","template_zarwiwe",parms).then(alert("Email Sent"))
-}
+
+  console.log(parms.name);
+  console.log(parms.email);
+  console.log(parms.message);
+  
+  const serviceID = "service_98c96gb";
+  const templateID ="contact_form";
+
+  emailjs.send(serviceID,templateID,parms).then(
+  (response) => {
+    console.log('SUCCESS!', response.status, response.text);
+  },
+  (error) => {
+    console.log('FAILED...', error);
+  },
+);
+
+});
+
