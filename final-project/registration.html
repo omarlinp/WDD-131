@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        /* Import fonts from the original style.css */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        /* Root variables from the original style.css */
+        :root {
+            --blue: #6090c0;
+            --green-accent: #00C853;
+            --dark-bg: #282828;
+            --light-text: #FFFFFF;
+            --white: #fff;
+            --gray: #383838;
+            --input-bg: #555555;
+            --input-text: #FFFFFF;
+        }
+
+        /* Light mode variables from the original style.css */
+        body.light-mode {
+            --dark-bg: #f0f0f0;
+            --light-text: #333333;
+            --green-accent: #006400;
+            --gray: #bbbbbb;
+            --blue: #306998;
+            --input-bg: #e0e0e0;
+            --input-text: #333333;
+        }
+
+        /* General body styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+        }
+
+        /* Registration container styling */
+        .register-container {
+            background-color: var(--gray); /* Use --gray for the card background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow for depth */
+            width: 100%;
+            max-width: 500px; /* Wider than login for more fields */
+            text-align: center;
+        }
+
+        /* Heading styling */
+        .register-container h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--green-accent); /* Green accent for headings */
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        /* Form group for input fields */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        /* Label styling */
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--light-text); /* Light text for labels */
+        }
+
+        /* Input field styling */
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--input-bg); /* Input background color */
+            color: var(--input-text); /* Input text color */
+            font-size: 1rem;
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        /* Placeholder color */
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6); /* Slightly transparent white for dark mode */
+        }
+        body.light-mode .form-group input::placeholder {
+            color: rgba(51, 51, 51, 0.6); /* Slightly transparent dark for light mode */
+        }
+
+        /* Focus state for inputs */
+        .form-group input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--green-accent); /* Green glow on focus */
+        }
+
+        /* Submit button styling */
+        .register-button {
+            background-color: var(--green-accent); /* Green accent for button background */
+            color: var(--dark-bg); /* Dark background color for button text */
+            border: none;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+        }
+
+        /* Hover effect for button */
+        .register-button:hover {
+            background-color: #00a040; /* Slightly darker green on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Light mode specific button styling */
+        body.light-mode .register-button {
+            color: var(--dark-bg); /* Button text matches general light text */
+        }
+        body.light-mode .register-button:hover {
+            background-color: #007400; /* Darker green for light mode hover */
+        }
+
+        /* Link for already registered */
+        .already-registered {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        .already-registered a {
+            color: var(--green-accent); /* Green accent for links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .already-registered a:hover {
+            text-decoration: underline;
+        }
+
+        /* Toggle Dark Mode Button (optional, for demonstration) */
+        .toggle-theme-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: 2px solid var(--green-accent);
+            color: var(--green-accent);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .toggle-theme-btn:hover {
+            background-color: var(--green-accent);
+            color: var(--dark-bg);
+        }
+        body.light-mode .toggle-theme-btn:hover {
+            background-color: var(--green-accent);
+            color: var(--light-text);
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Register</h2>
+        <form>
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Choose a username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Choose a password" required>
+            </div>
+            <div class="form-group">
+                <label for="repeat-password">Repeat Password</label>
+                <input type="password" id="repeat-password" name="repeat-password" placeholder="Repeat your password" required>
+            </div>
+            <button type="submit" class="register-button">Register</button>
+        </form>
+        <div class="already-registered">
+            Already have an account? <a href="#">Login here</a>
+        </div>
+    </div>
+
+    <!-- Optional: Toggle Dark Mode Button for demonstration -->
+    <button class="toggle-theme-btn" onclick="toggledarkmode()">Toggle Dark Mode</button>
+
+    <script>
+        // Function to toggle dark mode (copied from your script.js for standalone demo)
+        function toggledarkmode() {
+            document.body.classList.toggle('light-mode');
+
+            // Set CSS variables based on light-mode class
+            if (document.body.classList.contains('light-mode')) {
+                document.documentElement.style.setProperty('--dark-bg', '#f0f0f0');
+                document.documentElement.style.setProperty('--light-text', '#333333');
+                document.documentElement.style.setProperty('--green-accent', '#006400');
+                document.documentElement.style.setProperty('--gray', '#bbbbbb');
+                document.documentElement.style.setProperty('--blue', '#306998');
+                document.documentElement.style.setProperty('--input-bg', '#e0e0e0');
+                document.documentElement.style.setProperty('--input-text', '#333333');
+            } else {
+                document.documentElement.style.setProperty('--dark-bg', '#282828');
+                document.documentElement.style.setProperty('--light-text', '#FFFFFF');
+                document.documentElement.style.setProperty('--green-accent', '#00C853');
+                document.documentElement.style.setProperty('--gray', '#383838');
+                document.documentElement.style.setProperty('--blue', '#6090c0');
+                document.documentElement.style.setProperty('--input-bg', '#555555');
+                document.documentElement.style.setProperty('--input-text', '#FFFFFF');
+            }
+        }
+
+        // Apply initial theme based on localStorage or system preference if you had it.
+        // For this standalone example, it starts in dark mode by default.
+    </script>
+</body>
+</html>
