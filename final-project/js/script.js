@@ -51,3 +51,31 @@ function toggleMenu() {
   const nav = document.getElementById("nav-links");
   nav.classList.toggle("show");
 }
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    const dropdowns = document.getElementsByClassName("dropdown-content");
+    for (let i = 0; i < dropdowns.length; i++) {
+      const openDropdown = dropdowns[i];
+      if (openDropdown.style.display === 'block') { // Check if it's currently displayed
+        openDropdown.style.display = 'none';
+      }
+    }
+  }
+}
+
+// Toggle dropdown on button click for better mobile usability
+document.addEventListener('DOMContentLoaded', (event) => {
+    const dropbtn = document.querySelector('.dropbtn');
+    if (dropbtn) {
+        dropbtn.addEventListener('click', function() {
+            const dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === 'block') {
+                dropdownContent.style.display = 'none';
+            } else {
+                dropdownContent.style.display = 'block';
+            }
+        });
+    }
+});

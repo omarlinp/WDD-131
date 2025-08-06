@@ -206,7 +206,38 @@ footer {
   nav a, .toogle-btn {
     margin: 1rem;
   }
-
+  /* Dropdown specific styles for mobile */
+  .dropdown {
+    width: 100%; /* Take full width in mobile menu */
+    text-align: left;
+  }
+  .dropdown .dropbtn {
+    width: auto; /* Adjust button width */
+    text-align: left;
+    margin: 1rem; /* Match other nav links */
+    padding: 0; /* Remove padding to align with other links */
+    background: none;
+    border: none;
+    color: var(--green-accent);
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .dropdown-content {
+    position: relative; /* Relative positioning for dropdown content */
+    background-color: var(--gray); /* Use gray for dropdown background */
+    box-shadow: none; /* Remove shadow for mobile */
+    width: 100%; /* Full width */
+    left: 0;
+    top: 0;
+    padding: 0.5rem 0;
+    border-radius: 0;
+  }
+  .dropdown-content a {
+    padding: 0.5rem 1rem; /* Adjust padding for dropdown links */
+    text-align: left;
+    display: block;
+    color: var(--light-text); /* Ensure good contrast */
+  }
 }
 
 @media (max-width: 480px) {
@@ -245,4 +276,71 @@ body.light-mode .contact-form button{
 }
 body.light-mode .contact-form button:hover{
     background-color: #007400;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin: 0 1rem; /* Align with other nav links */
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  color: var(--green-accent);
+  padding: 0; /* Remove default button padding */
+  font-weight: bold;
+  font-size: 1rem; /* Match nav link font size */
+  cursor: pointer;
+  display: flex; /* Allow icon and text to be on the same line */
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--dark-bg); /* Use dark background for dropdown */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden; /* Ensures rounded corners apply to content */
+  top: 100%; /* Position below the button */
+  left: 50%; /* Center dropdown horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+}
+
+.dropdown-content a {
+  color: var(--light-text); /* Dropdown links text color */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  margin: 0; /* Remove margin from nav a */
+  font-weight: normal; /* Reset font weight */
+}
+
+.dropdown-content a:hover {
+  background-color: var(--gray); /* Hover background for dropdown links */
+  color: var(--green-accent); /* Hover text color */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Light mode dropdown styles */
+body.light-mode .dropdown-content {
+  background-color: var(--dark-bg); /* Use light background for dropdown */
+}
+
+body.light-mode .dropdown-content a {
+  color: var(--light-text); /* Dropdown links text color in light mode */
+}
+
+body.light-mode .dropdown-content a:hover {
+  background-color: var(--gray); /* Hover background for dropdown links in light mode */
+  color: var(--green-accent); /* Hover text color in light mode */
 }
