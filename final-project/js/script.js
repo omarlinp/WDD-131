@@ -65,6 +65,28 @@ window.onclick = function(event) {
   }
 }
 
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    const dropdowns = document.getElementsByClassName("dropdown-content");
+    for (let i = 0; i < dropdowns.length; i++) {
+      const openDropdown = dropdowns[i];
+      if (openDropdown.style.display === 'block') { // Check if it's currently displayed
+        openDropdown.style.display = 'none';
+      }
+    }
+  }
+
+  // Close the hamburger menu if clicked outside
+  const navLinks = document.getElementById("nav-links");
+  const hamburger = document.querySelector(".hamburger");
+
+  // Check if the clicked target is NOT the nav-links itself or a descendant, AND NOT the hamburger button
+  if (!navLinks.contains(event.target) && !hamburger.contains(event.target) && navLinks.classList.contains('show')) {
+    navLinks.classList.remove('show');
+  }
+}
+
 // Toggle dropdown on button click for better mobile usability
 document.addEventListener('DOMContentLoaded', (event) => {
     const dropbtn = document.querySelector('.dropbtn');
