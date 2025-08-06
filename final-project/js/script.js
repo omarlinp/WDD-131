@@ -47,3 +47,7 @@ document.getElementById("contact-form").addEventListener("submit",function(event
 
 });
 
+function toggleMenu() {
+  const nav = document.getElementById("nav-links");
+  nav.classList.toggle("show");
+}

@@ -64,7 +64,14 @@ nav a {
   border-radius: 5px;
   cursor: pointer;
 }
-
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--green-accent);
+  cursor: pointer;
+}
 
 
 .hero{
@@ -177,9 +184,29 @@ footer {
   .skill-card {
     flex: 1 1 calc(50% - 3rem); /* 2 cards per row on smaller screens */
   }
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: var(--dark-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    display: none;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
   .hamburger {
-        display: block;
-    }
+    display: block;
+  }
+
+  nav a, .toogle-btn {
+    margin: 1rem;
+  }
+
 }
 
 @media (max-width: 480px) {
